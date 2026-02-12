@@ -143,12 +143,19 @@ document.addEventListener('DOMContentLoaded', () => {
         moveButton();
     }, { passive: false });
 
-    // if user actually manages to click the 'No' button, send a notification
+    // If user clicks the 'No' button, don't send a notification — just move it
     noBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        // notify and show a brief acknowledgement
-        sendNotification('no').catch(() => {});
-        showTempMessage('Zapisano odpowiedź: Nie 😜');
+        moveButton();
+    });
+
+    // Prevent keyboard activation from sending or triggering other actions.
+    // Enter and Space will move the button instead of performing a click action.
+    noBtn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+            e.preventDefault();
+            moveButton();
+        }
     });
     // Initialize EmailJS early if available
     if (EMAILJS_USER_ID && window.emailjs && !_emailjs_initialized) {
