@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Walentynka ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+    <div class="hearts"></div>
+
+    <!-- EKRAN 1 -->
+    <div id="screen1" class="screen active">
+        <button class="main-button" onclick="goToSecondScreen()">
+            Kliknij aby przejść dalej 💌
+        </button>
+    </div>
+
+    <!-- EKRAN 2 -->
+    <div id="screen2" class="screen">
+        <h1>Zostaniesz moją walentynką? ❤️</h1>
+        <div class="choice-buttons">
+            <button class="yes-btn" onclick="answerYes()">Tak 💖</button>
+            <button class="no-btn" onmouseover="moveButton()">Nie 😜</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
